@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Management</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-5">Product Management</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Add Product</h2>
+                        <form id="addProductForm">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="productName" placeholder="Product Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="productType" placeholder="Product Type" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="productPlace" placeholder="Product Place" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="number" class="form-control" id="productWarranty" placeholder="Product Warranty" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Add Product</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Products</h2>
+                        <button class="btn btn-primary mb-3" onclick="getAllProducts()">Get All Products</button>
+                        <ul id="productList" class="list-group"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Get Product by ID</h2>
+                        <div class="form-group">
+                            <input type="number" class="form-control" id="productId" placeholder="Product ID" required>
+                        </div>
+                        <button class="btn btn-primary" onclick="getProductById()">Get Product</button>
+                        <p id="singleProduct" class="mt-3"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Get Product by Name</h2>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="productNameSearch" placeholder="Product Name" required>
+                        </div>
+                        <button class="btn btn-primary" onclick="getProductByName()">Get Product</button>
+                        <p id="productByName" class="mt-3"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Edit Product</h2>
+                        <div class="form-group">
+                            <input type="number" class="form-control" id="editProductId" placeholder="Product ID" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="editProductName" placeholder="Product Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="editProductType" placeholder="Product Type" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="editProductPlace" placeholder="Product Place" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" class="form-control" id="editProductWarranty" placeholder="Product Warranty" required>
+                        </div>
+                        <button class="btn btn-primary" onclick="editProduct()">Edit Product</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">Delete Product</h2>
+                        <div class="form-group">
+                            <input type="number" class="form-control" id="deleteProductId" placeholder="Product ID" required>
+                        </div>
+                        <button class="btn btn-danger" onclick="deleteProduct()">Delete Product</button>
+                        <p id="deleteStatus" class="mt-3"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
